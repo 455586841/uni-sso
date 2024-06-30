@@ -32,7 +32,7 @@ import { PrometheusModule } from '@willsoto/nestjs-prometheus';
     KeycloakConnectModule.registerAsync({
       imports: [ConfigModule],
       useFactory: async (configService: ConfigService) => ({
-        authServerUrl: `${configService.KEYCLOAK_HOST}/auth`,
+        authServerUrl: `${configService.KEYCLOAK_HOST}`,
         realm: configService.KEYCLOAK_REALM,
         clientId: configService.KEYCLOAK_CLIENT_ID,
         secret: configService.KEYCLOAK_CLIENT_SECRET,
